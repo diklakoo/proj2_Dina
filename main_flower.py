@@ -1,19 +1,19 @@
-'''d = []
-with open("iris.data") as f:
-    for line in f:
-       d = [line]'''
-
 list=[]
+flowers = {}
 file= open("iris.data",'r')
 for line in file :
-    list.append(line.split(","))
+    l = line.rstrip().split(",")
+    if len(l) == 5 :
+        height = l[3]
+        name = l[4]
+        if name in flowers:
+            flowers[name] = round(float(flowers[name]) + float(height), 2)
+        else:
+            flowers[name] = height
 
-sum=0
-for i in list:
-    list[0][0]= int(list[0][0])
+def printing_flower_height(dict):
+ for key in dict:
+    print ( key,dict[key])
 
-
-print (list[0][0])
-
-
+printing_flower_height(flowers)
 
