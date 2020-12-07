@@ -1,4 +1,3 @@
-list=[]
 flowers = {}
 file= open("iris.data",'r')
 for line in file :
